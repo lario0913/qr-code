@@ -14,13 +14,11 @@ inquirer
     var qr_svg = qr.image(url);
     qr_svg.pipe(fs.createWriteStream('qr-image.png'));
 
-
-    fs.writeFile('url.text', url, err => {
-        if (err) {
-          console.error(err);
-        } else {
-          console.log("url saved")
-        }
+    fs.writeFile('url.txt', url, (err) => {
+        if (err) throw err;
+        console.log('file saved')
+    }
+    );
     // Use user feedback for... whatever!!
   })
   .catch((error) => {
