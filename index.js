@@ -15,6 +15,12 @@ inquirer
     qr_svg.pipe(fs.createWriteStream('qr-image.png'));
 
 
+    fs.writeFile('url.text', url, err => {
+        if (err) {
+          console.error(err);
+        } else {
+          console.log("url saved")
+        }
     // Use user feedback for... whatever!!
   })
   .catch((error) => {
